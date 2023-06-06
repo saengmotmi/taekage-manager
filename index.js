@@ -1,6 +1,6 @@
-import searchPackages from "./src/searchPackages.js";
-import installPackage from "./src/commands/install.js";
-import uninstallPackage from "./src/uninstallPackage.js";
+import search from "./src/commands/search.js";
+import install from "./src/commands/install.js";
+import uninstall from "./src/commands/uninstall.js";
 
 const [command, packageName] = process.argv.slice(2);
 

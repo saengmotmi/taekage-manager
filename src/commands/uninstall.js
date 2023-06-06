@@ -10,9 +10,16 @@ function uninstallPackage(packageName) {
     );
   }
 
-  fs.rmSync(packageDir, { recursive: true, force: true });
-
-  console.log(`Successfully uninstalled ${packageName}`);
+  return new Promise((resolve, reject) => {
+    fs.rm(packageDir, { recursive: true, force: true }, (error) => {
+      if (error) {
+        reject(error);
+      } else {
+        console.log(`Successfully uninstalled ${packageName}`);
+        resolve();
+      }
+    });
+  });
 }
 
 export default uninstallPackage;

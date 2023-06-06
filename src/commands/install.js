@@ -9,6 +9,8 @@ async function installPackage(packageName) {
   const outputPath = path.join("node_modules", packageName);
 
   await extractTarball(tarballUrl, outputPath);
+
+  return packageInfo;
 }
 
 export default installPackage;
