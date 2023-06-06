@@ -1,5 +1,6 @@
 import searchPackages from "./src/searchPackages.js";
 import installPackage from "./src/installPackage.js";
+import uninstallPackage from "./src/uninstallPackage.js";
 
 const [command, packageName] = process.argv.slice(2);
 
@@ -21,6 +22,15 @@ if (command === "search") {
     .catch((error) => {
       console.error(`Error while installing package: ${error.message}`);
     });
+} else if (command === "uninstall") {
+  try {
+    uninstallPackage(packageName);
+    console.log(`Successfully uninstalled ${packageName}`);
+  } catch (error) {
+    console.error(`Error while uninstalling package: ${error.message}`);
+  }
 } else {
-  console.log('Invalid command. Please use "search" or "install".');
+  console.log(
+    'Invalid command. Please use "search", "install", or "uninstall".'
+  );
 }
