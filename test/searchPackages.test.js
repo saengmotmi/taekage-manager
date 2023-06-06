@@ -1,4 +1,4 @@
-const searchPackages = require("./searchPackages.js");
+import searchPackages from "../src/searchPackages.js";
 
 test("should return packages related to the search term", async () => {
   const packages = await searchPackages("express");

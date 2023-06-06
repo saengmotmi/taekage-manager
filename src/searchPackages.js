@@ -1,4 +1,4 @@
-const fetch = require("node-fetch");
+import fetch from "node-fetch";
 
 async function searchPackages(packageName) {
   const response = await fetch(
@@ -9,4 +9,4 @@ async function searchPackages(packageName) {
   return data.objects.map((obj) => obj.package);
 }
 
-module.exports = searchPackages;
+export default searchPackages;
